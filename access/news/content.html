@@ -1,0 +1,70 @@
+
+		
+		<hr />
+		
+					<ol class="breadcrumb bc-3" >
+								<li>
+						<a href="index.html"><i class="fa-home"></i>Admin</a>
+					</li>
+							<li>
+		
+									<a href="tables-main.html">Noticias</a>
+							</li>
+						<li class="active">
+		
+									<strong>Data Tables</strong>
+							</li>
+							</ol>
+		
+	
+		
+		<h3>Noticias</h3>
+		
+		
+		
+		
+		<h3><span class="label label-warning">New in 1.1.3</span>Noticias</h3>
+		<br />
+		
+		<table class="table table-bordered datatable" id="tblNoticias">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Titulo</th>
+					<th>Fecha</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+				<tr>
+					<th>Id</th>
+					<th>Titulo</th>
+					<th>Fecha</th>
+					<th>Acciones</th>
+				</tr>
+			</tfoot>
+		</table>
+		
+	  <script type="text/javascript">
+			jQuery(document).ready(function($)
+			{
+				var table = $("#tblNoticias").dataTable({
+					"sPaginationType": "bootstrap",
+					"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+					"bStateSave": true
+				});
+				
+				table.columnFilter({
+					"sPlaceHolder" : "head:after"
+				});
+			});
+		</script>
+		
+		<br />
+
+
+     <!-- js -->
+     <script type="text/javascript" src="js/functions.js"></script>
+     <script type="text/javascript" src="js/content.js"></script>
