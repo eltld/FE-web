@@ -7,6 +7,14 @@ $(document).ready(function(){
    
    loadTable();
     
+
+   $("#btnCrearNoticia").onclick(function(event)
+   {
+   	console.log("crear noticia");
+
+   });
+ 
+
     
     
 });

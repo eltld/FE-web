@@ -6,7 +6,7 @@
 function create()
 {
     
-    $("#content").loa("create.html");
+    jQuery("#content").load("news/create.html");
     
 }
 
