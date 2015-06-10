@@ -10,23 +10,76 @@ function create()
     
 }
 
+function createNoticia()
+{
 
+  console.log("obtengo los datos a insertar de la noticia");
+   var $=jQuery;
+
+  var titulo=$("#titulo").val();
+  var fecha=$("#fecha").val();
+  var autor=$("#autor").val();
+  var cuerpo=$("#cuerpo").val();
+  var id_noticia="";
+
+  var url="http://localhost:8080/FE-web/data/php/createNoticia.php";
+ 
+  var data= JSON.stringify({
+    'id_noticia': id_noticia,
+    'titulo':titulo,
+    "fecha":fecha,
+    "autor":autor,
+    "cuerpo":cuerpo
+  });
+
+
+
+   $.ajax({ 
+    url        : url,
+    dataType   : 'json',
+    data       : data,
+    type       : 'POST',
+    success:function(data)
+    {
+      console.log("data");
+      if(data.status=="OK")
+        {
+          $("#content").load("news/content.html");
+
+        }
+
+    },
+    error:function(data)
+    {
+
+
+    }
+
+   });
+
+   
+}
+
+
+/*** carga el listado de noticias */
 function loadTable()
 {
     console.log("Load Table");
 
-    /*$.ajax({
-      url:"/data/noticias.php",
+    var url=getUrlServer()+"/noticias.php";
+    var $=jQuery;
+
+    $.ajax({
       type:"json",
       data:null,
+      url:url,
       success:function(data)
         {
-            
-                  
-          $("#tableNoticias > tbody").empty();
            
-             
-            
+          console.log("data");     
+
+          $("#tblNoticias > tbody").empty();
+           
         },
       error:function(error)
         {
@@ -35,6 +88,12 @@ function loadTable()
     
     });
      
-    */
+  
 
 }
+
+jQuery(document).ready(function(){
+ 
+   loadTable();
+
+});

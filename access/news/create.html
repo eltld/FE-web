@@ -19,7 +19,7 @@
 		
 					
 						
-				       <form role="form" id="form1" method="post" class="validate">
+				       <form  id="form1" class="validate">
 		
 							
 						    
@@ -34,7 +34,7 @@
 								<label  for="fecha" class="control-label">Fecha Noticia</label>
 								
 									<div class="input-group">
-										<input id="fecha" type="text" class="form-control datepicker" data-format="D, dd MM yyyy">
+										<input id="fecha" type="text" class="form-control datepicker" data-format="yyyy-mm-dd">
 										
 										<div class="input-group-addon">
 											<a href="#"><i class="entypo-calendar"></i></a>
@@ -53,18 +53,20 @@
 				 	       </div>
 
 
+                           <!--
 				 	       <div class="form-group">
-				           <textarea class="form-control wysihtml5" data-stylesheet-url="assets/css/wysihtml5-color.css" name="sample_wysiwyg" id="sample_wysiwyg"></textarea>
+				           <textarea class="form-control wysihtml5" data-stylesheet-url="assets/css/wysihtml5-color.css" name="sample_wysiwyg" id="cuerpo"></textarea>
 			               </div>
 
+                            -->
 			               <div class="form-group">
-                           <textarea class="form-control ckeditor">
+                           <textarea id="cuerpo" class="form-control ckeditor">
                            </textarea>
 			               </div>
 
 
                           <div class="form-group">
-						   <button type="submit" id="bntCrearNoticia" class="btn btn-success">Enviar</button>
+						   <button  type="button" id="bntCrearNoticia" class="btn btn-success" onclick="createNoticia();">Enviar</button>
 						   <button type="reset" class="btn">Reset</button>
 					      </div>
 		
@@ -142,7 +144,7 @@
 	<!-- Demo Settings -->
 	<script src="assets/js/neon-demo.js"></script>
 
-    <script src="js/create.js"></script>
+    <script src="news/js/create.js"></script>
 		
 		
 		

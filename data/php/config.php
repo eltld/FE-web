@@ -1,8 +1,8 @@
 <?php 
 
-   $servidor="localhost";
+   $servidor="localhost:8080";
    $user="root";
-   $password="d3zinf04m";
+   $password="";
 
  
 
