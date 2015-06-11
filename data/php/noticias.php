@@ -3,7 +3,7 @@
 
 require_once ("config.php");
 
-$enlace =  mysql_connect("localhost:8080","root","");
+$enlace =  mysql_connect("localhost","root","");
 if (!$enlace) {
     die('No pudo conectarse: ' . mysql_error());
 }
@@ -16,7 +16,7 @@ else
       }else
       {
          
-         $consulta =  "select * from t_not order by Id desc limit 5  ";
+         $consulta =  "select * from t_noticia order by id_not desc limit 5  ";
           
 		 //$consulta="select * from noticias where Id=96"; 
              
@@ -44,7 +44,7 @@ else
 
                 {
 
-                   $row_array["noticia_id"] = $row["not_id"];
+                   $row_array["noticia_id"] = $row["id_not"];
                    $row_array["noticia_titulo"] = $row["not_titulo"];
                    $row_array["noticia_fecha"]  =  $row["not_fecha"];
                    $row_array["noticia_autor"]  =  $row["not_autor"];
